@@ -1,0 +1,30 @@
+.container {
+  width: 100%;
+  margin: auto;
+
+  &__character-img {
+    display: block;
+    margin: 0 auto 2rem;
+  }
+
+  &__select-button {
+    width: 100%;
+    min-height: 2rem;
+    border: none;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.2s ease-in;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(black, 0.8);
+    }
+
+    &:active {
+      background-color: rgba(black, 0.5);
+    }
+  }
+}

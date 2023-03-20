@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Select class</h1>
+  <div class="container__classes">
+    <app-character-select *ngFor="let character of gameService.playableCharacters"
+                          class="container__classes--class"
+                          [character]="character"
+                          (selected)="onCharacterSelected($event)">
+    </app-character-select>
+  </div>
+</div>

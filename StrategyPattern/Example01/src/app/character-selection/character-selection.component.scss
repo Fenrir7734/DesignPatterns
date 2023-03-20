@@ -1,0 +1,25 @@
+.container {
+  height: 100%;
+
+  h1 {
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__classes {
+    display: grid;
+    place-content: center;
+    align-items: center;
+    height: 100%;
+
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    column-gap: 5rem;
+    padding: 5rem;
+    margin-top: 10rem;
+
+    &--class {
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+}

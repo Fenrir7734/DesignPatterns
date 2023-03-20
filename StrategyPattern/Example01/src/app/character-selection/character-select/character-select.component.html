@@ -1,0 +1,8 @@
+<div class="container">
+  <img class="container__character-img"
+       [src]="getImg()"
+       [alt]="character?.type()">
+  <button class="container__select-button" (click)="onClick()">
+    {{ character?.type() }}
+  </button>
+</div>
