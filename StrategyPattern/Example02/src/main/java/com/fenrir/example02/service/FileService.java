@@ -1,7 +1,7 @@
 package com.fenrir.example02.service;
 
 import com.fenrir.example02.generator.GeneratorContext;
-import com.fenrir.example02.generator.GeneratorType;
+import com.fenrir.example02.generator.StrategyType;
 import com.fenrir.example02.generator.model.DataModel;
 import com.fenrir.example02.generator.strategy.ExcelGeneratorStrategy;
 import com.fenrir.example02.generator.strategy.GeneratorStrategy;
@@ -16,7 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class FileService {
 
-    public byte[] generateFile(DataModel dataModel, List<GeneratorType> types) {
+    public byte[] generateFile(DataModel dataModel, List<StrategyType> types) {
         try {
             GeneratorContext context = new GeneratorContext();
             generate(context, dataModel, types);
@@ -27,16 +27,16 @@ public class FileService {
         }
     }
 
-    public void generate(GeneratorContext context, DataModel dataModel, List<GeneratorType> types) throws Exception {
-        for (GeneratorType type: types) {
+    public void generate(GeneratorContext context, DataModel dataModel, List<StrategyType> types) throws Exception {
+        for (StrategyType type: types) {
             GeneratorStrategy strategy = getStrategy(type);
             context.setGeneratorStrategy(strategy);
             context.generate(dataModel);
         }
     }
 
-    private GeneratorStrategy getStrategy(GeneratorType generatorType) {
-        return switch (generatorType) {
+    private GeneratorStrategy getStrategy(StrategyType strategyType) {
+        return switch (strategyType) {
             case XML -> new XmlGeneratorStrategy();
             case XLSX -> new ExcelGeneratorStrategy();
             case PDF -> new PdfGeneratorStrategy();
