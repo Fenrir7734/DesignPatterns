@@ -12,25 +12,15 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-public class GeneratorContext {
-    private final List<FileEntry> entries = new ArrayList<>();
-    private GeneratorStrategy generatorStrategy;
+public abstract class GeneratorContext {
+    protected final List<FileEntry> entries = new ArrayList<>();
+    protected GeneratorStrategy generatorStrategy;
 
     public GeneratorContext() {
-        this(new PdfGeneratorStrategy());
+        this.generatorStrategy = new PdfGeneratorStrategy();
     }
 
-    public GeneratorContext(GeneratorStrategy strategy) {
-        this.generatorStrategy = strategy;
-    }
-
-    public void generate(DataModel dataModel) throws Exception {
-        try (ByteArrayOutputStream out = new ByteArrayOutputStream()){
-            generatorStrategy.generate(dataModel, out);
-            FileEntry fileEntry = new FileEntry(generatorStrategy.extension(), out.toByteArray());
-            entries.add(fileEntry);
-        }
-    }
+    public abstract void generate(DataModel dataModel) throws Exception;
 
     public byte[] zip() throws IOException {
         try (ByteArrayOutputStream out = new ByteArrayOutputStream();

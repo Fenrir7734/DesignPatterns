@@ -1,6 +1,6 @@
 package com.fenrir.example02.controller;
 
-import com.fenrir.example02.generator.StrategyType;
+import com.fenrir.example02.generator.strategy.StrategyType;
 import com.fenrir.example02.generator.model.DataModel;
 import com.fenrir.example02.service.FileService;
 import jakarta.servlet.http.HttpServletResponse;
@@ -28,9 +28,10 @@ class FileController {
     void generateFile(
             @RequestBody DataModel dataModel,
             @RequestParam("type") List<StrategyType> types,
+            @RequestParam(value = "encrypted", defaultValue = "false") boolean encryption,
             HttpServletResponse response) throws IOException {
 
-        byte[] content = fileService.generateFile(dataModel, types);
+        byte[] content = fileService.generateFile(dataModel, types, encryption);
 
         response.setStatus(HttpServletResponse.SC_OK);
         response.addHeader(CONTENT_DISPOSITION_HEADER_NAME, CONTENT_DISPOSITION_HEADER_ZIP_VALUE);

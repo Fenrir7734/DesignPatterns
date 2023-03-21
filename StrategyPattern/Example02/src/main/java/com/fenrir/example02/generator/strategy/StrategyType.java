@@ -1,4 +1,4 @@
-package com.fenrir.example02.generator;
+package com.fenrir.example02.generator.strategy;
 
 import lombok.RequiredArgsConstructor;
 

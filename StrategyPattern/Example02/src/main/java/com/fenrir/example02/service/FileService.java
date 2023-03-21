@@ -1,7 +1,9 @@
 package com.fenrir.example02.service;
 
+import com.fenrir.example02.generator.EncryptionGeneratorContext;
 import com.fenrir.example02.generator.GeneratorContext;
-import com.fenrir.example02.generator.StrategyType;
+import com.fenrir.example02.generator.PlainTextGeneratorContext;
+import com.fenrir.example02.generator.strategy.StrategyType;
 import com.fenrir.example02.generator.model.DataModel;
 import com.fenrir.example02.generator.strategy.ExcelGeneratorStrategy;
 import com.fenrir.example02.generator.strategy.GeneratorStrategy;
@@ -16,9 +18,9 @@ import java.util.List;
 @RequiredArgsConstructor
 public class FileService {
 
-    public byte[] generateFile(DataModel dataModel, List<StrategyType> types) {
+    public byte[] generateFile(DataModel dataModel, List<StrategyType> types, boolean encription) {
         try {
-            GeneratorContext context = new GeneratorContext();
+            GeneratorContext context = getGeneratorContext(encription);
             generate(context, dataModel, types);
 
             return context.zip();
@@ -33,6 +35,10 @@ public class FileService {
             context.setGeneratorStrategy(strategy);
             context.generate(dataModel);
         }
+    }
+
+    private GeneratorContext getGeneratorContext(boolean encryption) {
+        return encryption ? new EncryptionGeneratorContext() : new PlainTextGeneratorContext();
     }
 
     private GeneratorStrategy getStrategy(StrategyType strategyType) {
