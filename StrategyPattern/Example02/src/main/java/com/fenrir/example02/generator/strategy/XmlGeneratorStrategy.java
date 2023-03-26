@@ -14,7 +14,7 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.OutputStream;
 
-public class XmlGeneratorStrategy implements GeneratorStrategy {
+class XmlGeneratorStrategy implements GeneratorStrategy {
 
     @Override
     public void generate(DataModel model, OutputStream outputStream) throws Exception {

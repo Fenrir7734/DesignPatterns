@@ -9,7 +9,7 @@ import javax.crypto.spec.SecretKeySpec;
 import java.io.ByteArrayOutputStream;
 
 // http://aes.online-domain-tools.com/
-public class EncryptionGeneratorContext extends GeneratorContext {
+class EncryptionGeneratorContext extends GeneratorContext {
     private static final String SECRET_KEY = "Bar12345Bar12345";
     private static final String TRANSFORMATION = "AES";
 

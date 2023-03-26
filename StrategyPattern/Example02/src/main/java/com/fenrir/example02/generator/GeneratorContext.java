@@ -3,7 +3,8 @@ package com.fenrir.example02.generator;
 import com.fenrir.example02.generator.model.DataModel;
 import com.fenrir.example02.generator.model.FileEntry;
 import com.fenrir.example02.generator.strategy.GeneratorStrategy;
-import com.fenrir.example02.generator.strategy.PdfGeneratorStrategy;
+import com.fenrir.example02.generator.strategy.GeneratorStrategyFactory;
+import com.fenrir.example02.generator.strategy.StrategyType;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -17,7 +18,7 @@ public abstract class GeneratorContext {
     protected GeneratorStrategy generatorStrategy;
 
     public GeneratorContext() {
-        this.generatorStrategy = new PdfGeneratorStrategy();
+        this.generatorStrategy = new GeneratorStrategyFactory().getStrategy(StrategyType.PDF);
     }
 
     public abstract void generate(DataModel dataModel) throws Exception;

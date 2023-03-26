@@ -5,7 +5,7 @@ import com.fenrir.example02.generator.model.FileEntry;
 
 import java.io.ByteArrayOutputStream;
 
-public class PlainTextGeneratorContext extends GeneratorContext {
+class PlainTextGeneratorContext extends GeneratorContext {
 
     public void generate(DataModel dataModel) throws Exception {
         try (ByteArrayOutputStream out = new ByteArrayOutputStream()){

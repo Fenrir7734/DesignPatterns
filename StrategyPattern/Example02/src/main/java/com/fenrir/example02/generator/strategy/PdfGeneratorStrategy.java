@@ -11,7 +11,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 import java.io.OutputStream;
 
-public class PdfGeneratorStrategy implements GeneratorStrategy {
+class PdfGeneratorStrategy implements GeneratorStrategy {
 
     @Override
     public void generate(DataModel model, OutputStream outputStream) throws Exception {

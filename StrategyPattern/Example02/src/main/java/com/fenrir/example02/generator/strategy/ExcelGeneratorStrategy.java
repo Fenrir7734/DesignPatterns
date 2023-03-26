@@ -7,7 +7,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.OutputStream;
 
-public class ExcelGeneratorStrategy implements GeneratorStrategy {
+class ExcelGeneratorStrategy implements GeneratorStrategy {
 
     @Override
     public void generate(DataModel model, OutputStream outputStream) throws Exception {
