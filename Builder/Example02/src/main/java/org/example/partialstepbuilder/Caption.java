@@ -37,13 +37,13 @@ public class Caption {
         // some more validation
     }
 
-    public static CaptionBuilderImpl builder(String text) {
+    public static CaptionBuilder builder(String text) {
         return new CaptionBuilderImpl(text);
     }
 
     // some methods here
 
-    public static class CaptionBuilderImpl implements CaptionBuilder {
+    public static class CaptionBuilderImpl implements CaptionBuilder, AlphaStep {
         private final String caption;
         private String font = "Arial";
         private int fontStyle = Font.PLAIN;

@@ -5,7 +5,7 @@ import org.example.partialstepbuilder.Caption;
 
 import java.awt.Color;
 
-public interface CaptionBuilder extends AlphaStep {
+public interface CaptionBuilder {
     CaptionBuilder font(String font);
     CaptionBuilder fontStyle(int fontStyle);
     CaptionBuilder size(int size);
