@@ -3,7 +3,6 @@ package org.example.director;
 import org.example.Rotation;
 import org.example.director.builder.CaptionBuilder;
 
-import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Font;
 
@@ -43,8 +42,6 @@ public class ImageCaption {
         private int size = 46;
         private Color color = Color.BLACK;
         private Rotation rotation = new Rotation(0, 0, 0);
-        private int alphaRule = AlphaComposite.SRC_OVER;
-        private float alpha = 1.0f;
 
         public CaptionBuilderImpl(String caption) {
             this.caption = caption;
