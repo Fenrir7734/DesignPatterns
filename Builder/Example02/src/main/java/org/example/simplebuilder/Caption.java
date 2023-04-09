@@ -13,7 +13,7 @@ public class Caption {
     private final Color color;
     private final Rotation rotation;
 
-    public Caption(CaptionBuilder builder) {
+    private Caption(CaptionBuilder builder) {
         this.caption = builder.caption;
         this.font = builder.font;
         this.fontStyle = builder.fontStyle;

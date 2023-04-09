@@ -16,7 +16,7 @@ public class Caption {
     private final int alphaRule;
     private final float alpha;
 
-    public Caption(CaptionBuilderImpl builder) {
+    private Caption(CaptionBuilderImpl builder) {
         this.caption = builder.caption;
         this.font = builder.font;
         this.fontStyle = builder.fontStyle;

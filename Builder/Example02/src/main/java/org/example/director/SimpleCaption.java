@@ -14,7 +14,7 @@ public class SimpleCaption {
     private final Color color;
     private final Rotation rotation;
 
-    public SimpleCaption(CaptionBuilderImpl builder) {
+    private SimpleCaption(CaptionBuilderImpl builder) {
         this.caption = builder.caption;
         this.font = builder.font;
         this.fontStyle = builder.fontStyle;

@@ -13,7 +13,7 @@ public class ImageCaption {
     private final Font font;
     private final Rotation rotation;
 
-    public ImageCaption(CaptionBuilderImpl builder) {
+    private ImageCaption(CaptionBuilderImpl builder) {
         this.caption = builder.caption;
         this.font = new Font(builder.font, builder.fontStyle, builder.size);
         this.rotation = builder.rotation;
