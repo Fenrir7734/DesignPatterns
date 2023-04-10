@@ -2,5 +2,7 @@ package org.factorymethod.without;
 
 public enum FileTypes {
     JSON,
-    YAML
+    YAML,
+    XML,
+    TXT
 }

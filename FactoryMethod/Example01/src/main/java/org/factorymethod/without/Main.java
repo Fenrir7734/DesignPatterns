@@ -1,6 +1,6 @@
 package org.factorymethod.without;
 
-import org.factorymethod.factory.model.AbstractModel;
+import org.factorymethod.without.model.AbstractModel;
 
 import java.io.IOException;
 import java.util.Map;

@@ -1,7 +1,10 @@
 package org.factorymethod.without;
 
-import org.factorymethod.factory.model.AbstractModel;
-import org.factorymethod.factory.model.JsonModel;
+import org.factorymethod.without.model.AbstractModel;
+import org.factorymethod.without.model.JsonModel;
+import org.factorymethod.without.model.TxtModel;
+import org.factorymethod.without.model.XmlModel;
+import org.factorymethod.without.model.YamlModel;
 
 import java.io.FileWriter;
 import java.io.IOException;
@@ -18,7 +21,11 @@ public class Writer {
         if (types == FileTypes.JSON || types == null) {
             model = new JsonModel(data);
         } else if (types == FileTypes.YAML) {
-            model = new JsonModel(data);
+            model = new YamlModel(data);
+        } else if (types == FileTypes.TXT) {
+            model = new TxtModel(data);
+        } else if (types == FileTypes.XML) {
+            model = new XmlModel(data);
         }
 
         model.setPath(constructPath(model));
