@@ -6,6 +6,7 @@ import org.factorymethod.factory.writer.JsonWriter;
 import org.factorymethod.factory.writer.YmlWriter;
 
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.Map;
 
 public class Main {
@@ -19,5 +20,7 @@ public class Main {
         AbstractWriter yamlWriter = new YmlWriter();
         AbstractModel yamlModel = yamlWriter.write(values);
         System.out.println(yamlModel.getPath());
+
+        Calendar.getInstance();
     }
 }
